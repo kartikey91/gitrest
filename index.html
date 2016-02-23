@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="gitrestApp">
+<head>
+  <title>GIT-REST-API</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+  </style>
+</head>
+
+<body ng-controller = "mainController as vm" ng-cloak>
+  <div class="container">
+    <div class="form-group">
+      <label for="githublink">Github Link:</label>
+      <input type="text" class="form-control" id="githublink" ng-model="vm.githubUrl" ng-keypress="vm.loadGithubUrl($event)" autofocus>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+         <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+           <th>Total number of open issues</th>
+           <td>{{vm.totalOpenIssues}}</td>
+        </tr>
+        <tr>
+           <th>Number of open issues that were opened in the last 24 hours</th>
+           <td>{{vm.last24HoursOpenIssues}}</td>
+        </tr>
+        <tr>
+           <th>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</th>
+           <td>{{vm.last247OpenIssues}}</td>
+        </tr>
+        <tr>
+           <th>Number of open issues that were opened more than 7 days ago</th>
+           <td>{{vm.moreThan7daysOpenIssues}}</td>
+        </tr>
+     </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+  <script src="app.js"></script> 
+</body>
+</html>
