@@ -4,7 +4,7 @@ This application will allow you to enter the any github public repository url an
 #How
 For this, we are using the GitHub REST API to show the count of open issues.
 
-#Demo
+#Demo: http://gitrest.herokuapp.com/ 
 
 #Improvement
  Validation of URL
